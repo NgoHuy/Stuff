@@ -1,0 +1,9 @@
+[Unit]
+Description=Run certbot 30 minutes before expiring
+
+[Service]
+Type=oneshot
+ExecStart=/root/renew-cert.sh
+User=root
+
+

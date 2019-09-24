@@ -1,0 +1,9 @@
+[Unit]
+Description=Run certbot 30 minutes before expiring
+
+[Timer]
+OnCalendar=2019-12-22 09:33:00
+Persistent=false
+
+[Install]
+WantedBy=timers.target
