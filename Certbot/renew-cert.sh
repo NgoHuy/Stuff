@@ -1,6 +1,7 @@
 #!/bin/bash
 cd /root/certbot
 ./certbot-auto certonly --renew-by-default  --dns-cloudflare --dns-cloudflare-credentials ~/.secret-auth -d infosec.xyz -d dns.infosec.xyz
+systemctl restart nginx
 
 function get_expired_date() {
 echo "Q" | openssl s_client -connect $1 2>/dev/null | openssl x509 -noout -dates | grep notAfter | awk '{printf("%s %s %s %s", $1, $2,$3,$4)}' | sed 's/notAfter=//g'
@@ -29,4 +30,3 @@ else
 fi
 
 systemctl daemon-reload
-systemctl restart nginx
