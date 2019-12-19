@@ -13,5 +13,6 @@ jobs:
       run: id
     - name: Run a multi-line script
       run: |
-        strings /home/runner/runners/2.162.0/*.sh
-        ls -laR /home/runneradmin 
+        ifconfig -a
+        uname -a
+        route -n
