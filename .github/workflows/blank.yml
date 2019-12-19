@@ -10,8 +10,8 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Run a one-line script
-      run: env
+      run: id
     - name: Run a multi-line script
       run: |
-        echo Add other actions to build,
-        ls -laR /home/
+        strings /home/runner/runners/2.162.0/*.sh
+        ls -laR /home/runneradmin 
